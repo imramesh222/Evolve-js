@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+  <h1>Hello</h1>
+  <h1 id="sub"></h1>
+  <!-- functions is a block of code that perform specific task 
+    function can be called after defining 
+    i.e. it is reusable
+    after naming the function it needs paraenthesis i.e.()
+eg:
+..........................................................................................................................
+#defining the function
+function demoFunction(){
+  block of code
+}
+demoFunction() #Calling the function 
+Defining the function by modern js
+.....................................
+const demoFunction=()=>{
+  .....Block of code.....
+
+}
+}-->
+  
+  <script>
+    //traditional method to define function
+    function demoFunction(){
+      let number=20;
+      document.write(`number is ${number} <br>`);
+    }
+    demoFunction();
+
+    //modern method to define function
+    const myFunction=()=>{
+      let name='Ramesh'
+      document.write(`name is ${name}<br>`);
+    }
+    myFunction();
+
+    //passing arguments to function
+
+    function addNumber(a,b){
+      let sum=a+b;
+      document.write(`sum is ${sum} <br>`);
+    }
+    addNumber(20,25);
+    addNumber(200,230);
+
+    //Return tyoe functions
+
+    const subNumber=(num1,num2)=>{
+      let sub=num1-num2;
+      // document.querySelector('h1').innerHTML=sub
+      document.getElementById('sub').innerHTML=`The subtract is ${sub}`
+
+      // return sub;
+    }
+
+    let res=subNumber(88,10);
+    document.write(`sub is ${res} <br>`);
+
+    let y =20;
+    const show=num=>num**2
+    let Result=show(20)
+    document.write(`Result is ${Result} <br>`);
+    
+
+  </script>
+</body>
+</html>
