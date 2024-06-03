@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+</head>
+<body>
+  <!-- 
+    onclick
+    ondblclick
+    onkeydown
+    onmouseover
+    onmouseout
+    onsubmit
+    onchange
+   -->
+
+   <button onclick="show()">Click me</button>
+   <h1 id="show" class="show"></h1>
+   <h3 id="show" class="show"></h3>
+
+
+  <script>
+    const show=()=>{
+      // alert("Clicked me")
+      document.getElementsByClassName('show')[0].innerHTML ='First index'
+      document.getElementsByClassName('show')[1].innerHTML ='Second index'
+    }
+  </script>
+</body>
+</html>
