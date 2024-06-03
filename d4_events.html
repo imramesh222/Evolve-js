@@ -16,17 +16,46 @@
     onchange
    -->
 
-   <button onclick="show()">Click me</button>
+   <button ondblclick="show()">Click me</button>
    <h1 id="show" class="show"></h1>
    <h3 id="show" class="show"></h3>
 
+   <img src="img/of.jpeg" onmouseover="on()" onmouseout="off()" alt="" width="400px" height="460px">
+   <button onclick="off()" id="off">OFF</button>
+   <button onclick="on()" id="on">ON</button>
+
+   <hr>
+   <select name="" id="">
+    <option value="">Select number</option>
+    <option value="">2</option>
+    <option value="">3</option>
+    <option value="">4</option>
+   </select>
+
 
   <script>
+
+    const on=()=>{
+      document.querySelector('img').src='img/on.jpg'
+      
+    }
+    const off=()=>{
+      document.querySelector('img').src='img/of.jpeg'
+      
+    }
+
+    
+
+    
+
+
     const show=()=>{
       // alert("Clicked me")
       document.getElementsByClassName('show')[0].innerHTML ='First index'
       document.getElementsByClassName('show')[1].innerHTML ='Second index'
+
     }
+    document.getElementById('on').addEventListener('click',on)
   </script>
 </body>
 </html>
