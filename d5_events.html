@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="color" id="color" onchange="bg()">
+
+  <select name="" id="input" onchange="show()">
+    <option value="html">HTML</option>
+    <option value="css">css</option>
+    <option value="react">react</option>
+    <option value="javascript">javascript</option>
+  
+  </select>
+
+  <h1></h1>
+
+  <hr>
+
+  <input type="text" id="text" onkeyup="showText()">
+  <h2></h2>
+
+
+
+  <script>
+    let bg=()=>{
+      let color=document.getElementById('color').value
+    // document.querySelector('body').setAttribute('bgcolor', color)
+    document.body.style.backgroundColor=color
+    }
+
+    const show=()=>{
+      let input=document.getElementById('input').value
+      document.querySelector('h1').innerHTML=`you choose ${input}.`
+    }
+  
+
+    const showText=()=>{
+      
+      // let text=document.getElementById('text').value
+      // document.querySelector('h2').innerHTML=`${text}`
+
+      let inputValue=document.getElementById('text').value
+      let bar =inputValue.value
+      inputValue.value=bar.toUpperCase()
+      
+    }
+
+
+  </script>
+  
+</body>
+</html>
