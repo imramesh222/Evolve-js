@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let value='52';
+    // switch (typeof value) {
+    //   case 'number':
+    //     document.write('Number')
+    //     break;
+    //     case 'string':
+    //       document.write('String')
+    //       break;
+    //       case 'boolean':
+    //         document.write('Boolean')
+    //         break;
+    //         case 'undefined':
+    //           document.write('Undefined')
+    //           break;
+    //           case 'object':
+    //             document.write('Object')
+    //             break;
+    //             case 'function':
+    //               document.write('Function')
+    //               break;
+    //               default:
+    //                 document.write('Unknown')
+    //                 break;
+
+    // }
+//     const fruit = prompt('Please enter');
+// switch (fruit) {
+//   case 'Oranges':
+//     document.write('Oranges are $0.59 a pound.');
+//     break;
+//     case 'Mangoes':
+//       document.write('Mangoes are $2.79 a pound.');
+//       break;
+//   case 'Mangoes':
+//   case 'Papayas':
+//     document.write('Mangoes and papayas are $2.79 a pound.');
+
+//     break;
+//   default:
+//     document.write(`Sorry, we are out of ${fruit}.`);
+// }
+
+let fruit;
+do {
+  fruit = prompt('Please enter a fruit:');
+  switch (fruit) {
+    case 'Oranges':
+      document.write('Oranges are $0.59 a pound.');
+      break;
+    case 'Mangoes':
+      document.write('Mangoes are $2.79 a pound.');
+      break;
+    case 'Papayas':
+      document.write('Papayas are $2.79 a pound.');
+      break;
+    default:
+      alert(`Sorry, we are out of ${fruit}. Please try again.`);
+      fruit = null; // Reset fruit to prompt the user again
+  }
+} while (fruit === null);
+
+
+
+  </script>
+</body>
+</html>

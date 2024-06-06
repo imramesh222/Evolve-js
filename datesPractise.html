@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dates in js</title>
+</head>
+<body>
+  
+  <script>
+    //Dates in js
+
+    // let myDate=new Date();
+    // console.log(myDate);
+    // document.write(myDate.toString()+'<br>')
+    // document.write(myDate.toDateString()+'<br>')
+    // document.write(myDate.toTimeString()+'<br>')
+    // document.write(myDate.toLocaleDateString()+'<br>')
+    // document.write(typeof myDate+'<br>')
+
+    // let myCreatedDate=new Date("2023-02-14");
+    // document.write(myCreatedDate.toLocaleString()+'<br>')
+
+    // let myTimestamp=Date.now();
+    // document.write(myTimestamp+'<br>')
+
+    // document.write(Math.trunc(Date.now()/1000)+'<br>')
+
+    let myDate=new Date();
+    document.write(myDate+'<br>')
+    // document.write(myDate.getDay()+'<br>')
+
+
+    myDate.toLocaleString('default',{
+      weekday:'long',
+      year:'numeric',
+      month:'long',
+      day:'2-digit',
+      timeZone:'utc'
+    });
+  </script>
+</body>
+</html>
