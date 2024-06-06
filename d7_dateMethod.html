@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Method</title>
+</head>
+<body>
+  <button id="btn" onclick="show()">
+    Show date
+  </button>
+  <div id="date"></div>
+  <script>
+    // // let show=() => {
+    // //   document.getElementById('date').innerHTML='date';
+    // // let myDate=new Date();
+    // // document.write(myDate)+'<br>'
+    // let show = () => {
+    //         let myDate = new Date();
+    //         document.getElementById('date').innerHTML = myDate + '<br>';
+    //     }
+    // // }
+    // let myDate = new Date()
+    // document.write(myDate.getDay()+'<br>')
+    
+    // let n= Number(prompt('Enter any number'));
+    // if(n>0){
+    //   document.write(`${n} is positive`)
+    // }else if (n<0){
+    //   document.write(`${n} is negative`)
+    // }else{
+    //   document.write('Zero')
+    // }
+
+    let a=Number(prompt('Enter first number'));
+    let b=Number(prompt('Enter second number'));
+    let c=Number(prompt('Enter third number'));
+    if(a>b && a>c){
+      document.write(`${a} is greater`)
+    }else if(b>c && b>a){
+      document.write(`${b} is greater`)
+    }else if(c>b && c<a){
+      document.write(`${c} is greater`)
+    }else{
+      document.write(`${a} , ${b} ,${c} are equal`)
+    }
+    
+  </script>
+</body>
+</html>

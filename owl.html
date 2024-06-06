@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Autoplay Carousel</title>
+  <style>
+    .carousel {
+      width: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item">Item 1</div>
+      <div class="carousel-item">Item 2</div>
+      <div class="carousel-item">Item 3</div>
+      <div class="carousel-item">Item 4</div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function() {
+      let currentIndex = 0;
+      const items = $('.carousel-item');
+      const itemCount = items.length;
+      const autoplaySpeed = 2000; // 2 seconds
+
+      function showNextItem() {
+        currentIndex = (currentIndex + 1) % itemCount;
+        const offset = -currentIndex * 100;
+        $('.carousel-inner').css('transform', 'translateX(' + offset + '%)');
+      }
+
+      setInterval(showNextItem, autoplaySpeed);
+    });
+  </script>
+
+</body>
+</html>
