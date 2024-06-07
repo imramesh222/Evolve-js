@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <label for="first">Enter first Number</label>
+    <input type="number" id="first">
+    <label for="second">Enter second number</label>
+    <input type="number" id="second">
+    <select id="sel">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="button" value="Calculate" onclick="calculate()">
+  </form>
+  <div id="result"></div>
+
+  <script>
+    function calculate() {
+      let a = parseFloat(document.getElementById('first').value);
+      let b = parseFloat(document.getElementById('second').value);
+      let operator = document.getElementById('sel').value;
+      let result = '';
+
+      switch(operator) {
+        case '+':
+          result = a + b;
+          break;
+        case '-':
+          result = a - b;
+          break;
+        case '*':
+          result = a * b;
+          break;
+        case '/':
+          result = a / b;
+          break;
+        default:
+          result = 'Invalid operation';
+      }
+
+      document.getElementById('result').innerText = `Result: ${result}`;
+    }
+  </script>
+</body>
+</html>
