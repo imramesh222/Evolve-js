@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple calculator</title>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+  <form>
+    <label for="first">First Number</label>
+    <input type="number" id="first">
+    <label for="second">Second Number</label>
+    <input type="number" id="second">
+    <select  id="sel">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+ 
+    <input type="button" value="Calculate" onclick="calculate()"> 
+  </form>
+  <div id="show-result"></div>
+
+  <script>
+    let calculate=()=> {
+      let a = parseFloat(document.getElementById('first').value);
+      let b = parseFloat(document.getElementById('second').value);
+      let operator = document.getElementById('sel').value;
+      let result = '';
+
+      switch(operator) {
+        case '+':
+          result = a + b;
+          break;
+        case '-':
+          result = a - b;
+          break;
+        case '*':
+          result = a * b;
+          break;
+        case '/':
+          result = a / b;
+          break;
+        default:
+          result = 'Invalid operation';
+      }
+
+      document.getElementById('show-result').innerText = `Result: ${result}`;
+    }
+
+  </script>
+  
+</body>
+</html>
