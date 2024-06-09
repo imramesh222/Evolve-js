@@ -13,9 +13,60 @@
     // for(i=10;i>=1;i--) {
     //   document.write(i);
     // }
-    for(i=100;i>=1;i--) {
-      document.write(`sorry <br>`);
-    }
+    // for(i=100;i>=1;i--) {
+    //   document.write(`sorry <br>`);
+    // }
+
+    // let sum =0;
+    // for(i=1;i<=10;i++){
+    //   sum=sum+i;
+    // }
+    // document.write(sum);
+
+    // for(i=0;i<=5;i++){
+    //   document.write(i+'<br>');
+    // }
+
+
+    // const colors = ["red", "green", "blue", "yellow"];
+    // // let i=colors.length;
+    // for(i=0;i<4;i++) {
+    //   document.write(colors[i]+'<br>');
+    // }
+
+    // let x=Number(prompt(`Enter number:`));
+    // for(i=1;i<=30;i++) {
+    //   document.write(`${x} * ${i}=${x*i}`);
+    //   document.write(`<br>`);
+    // }
+
+    let scores = prompt("Enter scores separated by space").split(' ');
+let sum = 0;
+
+// Convert each score to a number and calculate the sum
+for (i = 0; i < scores.length; i++) {
+  sum += Number(scores[i]);
+}
+
+document.write(sum);
+
+
+    
+
+    // Prompt the user to enter multiple numbers separated by space
+// let input = prompt("Enter numbers separated by space:");
+
+// // Split the input string into an array of strings using space as the delimiter
+// let numbers = input.split(" ");
+
+// // Convert the array of strings to an array of numbers
+// numbers = numbers.map(Number);
+
+// // Log the array of numbers to the console
+// document.write(numbers);
+
+
+
   </script>
 </body>
 </html>
