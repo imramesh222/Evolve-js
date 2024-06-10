@@ -57,10 +57,56 @@
   // document.write(`Sum of all elements in an array is : ${sum}`);
 
   /////Write a for loop that prints the elements of an array in reverse order.
-  let array=[1,2,3,4,5,6];
-  for(i=0;i<array.length;i++){
-    document.write(array[array.length-1-i]+'<br>');
-  }
+  // let array=[1,2,3,4,5,6];
+  // for(i=0;i<array.length;i++){
+  //   document.write(array[array.length-1-i]+'<br>');
+  // }
+
+  // let array=[1,2,3,4,5,6];
+  // for(i=array.length-1;i>=0;i--){
+  //   document.write(array[i]+'<br>');
+  // }
+
+  // let i=1;
+  // while(i<=10){
+  //   document.write(i+'<br>');
+  //   i++;
+  // }
+
+  ////Write a do...while loop that prints the numbers from 1 to 10.
+
+  // let i=1;
+  // do{
+  //   document.write(i+'<br>');
+  //   i++;
+  // }while(i<=10)
+
+  ////Write a for loop to print the multiplication table of 5.
+
+    // for(j=1;j<=10;j++){
+    //   document.write(`${5}*${j}=${5*j}<br>`);
+    // }
+
+    // for(i=1;i<=20;i++){
+    //   if(i%2==0){
+    //     document.write(`${i} is even '<br>'`);
+    //   }
+    //   else if(i%2==1){
+    //     document.write(`${i} is odd '<br>'`);
+    //   }else{
+    //     document.write(`${i} is neither even nor odd '<br>'`);
+    //   }
+    // }
+
+    for (let i = 0; i < 5; i++) {
+    let row = '';
+    for (let j = 0; j < 5; j++) {
+        row += '* ';
+    }
+      document.write(row+'<br>');
+
+    }
+
 
 
   </script>
