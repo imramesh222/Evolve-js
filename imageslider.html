@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      height: 450px;
+      border: 5px ridge gold;
+    }
+    .container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Uncomment if you want to maintain aspect ratio */
+      position: relative;
+    }
+    .container .btn{
+      /* position: absolute; */
+      /* top: 50%; */
+
+    }
+    #btn1{
+      border-radius: 50%;
+      border: none;
+      padding: 30px;
+      background:grey ;
+      position: absolute;
+      top: 30%;
+      left: 10px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bolder;
+
+    }
+    #btn2{
+      border: none;
+      border-radius: 50%;
+      padding: 30px;
+      background:grey ;
+      position: absolute;
+      top: 30%;
+      right: 10px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bolder;
+
+    }
+    #btn1:hover{
+      background: #fff;
+      color: #000;
+      font-size: 40px;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+    #btn2:hover{
+      background: #fff;
+      color: #000;
+      font-size: 40px;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="img/b1.jpg" alt="image not found" id="image">
+    <div class="btn">
+      <button id="btn1" onclick="prev()">&lt</button>
+      <button id="btn2" onclick="next()">&gt</button>
+      </div>
+  </div>
+
+  <script>
+    let images = ['b1.jpg', 'b2.jpg', 'b3.jpg', 'p1.jpg', 'p2.jpg'];
+    let imgLength = images.length;
+    let i = 0;
+
+    // setInterval(() => {
+    //   i=i%imgLength;
+    //   document.getElementById('image').src = `img/${images[i]}`;
+    //   //i=0%5=0
+    //   //i=1%5=1
+    //   //i=2%5=2
+    //   //i=3%5=3
+    //   //i=4%5=4
+    //   //i=5%5=0
+      
+    //   i++;
+    // }, 1000);
+
+    // document.getElementById('btn1').addEventListener('click', () => {
+    //   i--;
+    //   document.getElementById('image').src = `img/${images[i]}`;
+    // });
+    // document.getElementById('btn2').addEventListener('click', () => {
+    //   i++;
+    //   document.getElementById('image').src = `img/${images[i]}`;
+    // });
+
+
+    const prev=()=>{
+      // i=i%(-imgLength);
+      i = (i % imgLength + imgLength) % imgLength
+      document.getElementById('image').src = `img/${images[i]}`;
+      //i=0%5=0
+      //i=1%5=1
+      //i=2%5=2
+      //i=3%5=3
+      //i=4%5=4
+      //i=5%5=0
+      
+      i--;
+    }
+
+    const next=()=>{
+      i=i%imgLength;
+      document.getElementById('image').src = `img/${images[i]}`;
+      //i=0%5=0
+      //i=1%5=1
+      //i=2%5=2
+      //i=3%5=3
+      //i=4%5=4
+      //i=5%5=0
+      
+      i++;
+    }
+    
+  </script>
+  
+</body>
+</html>
