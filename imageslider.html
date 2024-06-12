@@ -20,11 +20,7 @@
       object-fit: cover; /* Uncomment if you want to maintain aspect ratio */
       position: relative;
     }
-    .container .btn{
-      /* position: absolute; */
-      /* top: 50%; */
 
-    }
     #btn1{
       border-radius: 50%;
       border: none;
@@ -108,27 +104,13 @@
     const prev=()=>{
       // i=i%(-imgLength);
       i = (i % imgLength + imgLength) % imgLength
-      document.getElementById('image').src = `img/${images[i]}`;
-      //i=0%5=0
-      //i=1%5=1
-      //i=2%5=2
-      //i=3%5=3
-      //i=4%5=4
-      //i=5%5=0
-      
+      document.getElementById('image').src = `img/${images[i]}`;      
       i--;
     }
 
     const next=()=>{
       i=i%imgLength;
       document.getElementById('image').src = `img/${images[i]}`;
-      //i=0%5=0
-      //i=1%5=1
-      //i=2%5=2
-      //i=3%5=3
-      //i=4%5=4
-      //i=5%5=0
-      
       i++;
     }
     
