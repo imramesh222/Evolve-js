@@ -17,8 +17,9 @@
     }
     .container img{
       width: 100%;
-      background: 5px gold;
-      height: 450px;
+      height: 100%;
+      position: relative;
+      object-fit: cover;
     }
     #btn1{
       background: grey;
@@ -78,14 +79,33 @@
     let images=['b1.jpg', 'b2.jpg', 'b3.jpg', 'p1.jpg', 'p2.jpg'];
     let imgLength=images.length;
     let i=0;
-    const prev=()=>{
-      i=(i-1+imgLength)%imgLength;
-      document.getElementById('image').src=`img/${images[i]}`;      
-    }
-    const next=()=>{
-      i=(i+1+imgLength)%imgLength;
-      document.getElementById('image').src=`img/${images[i]}`;  
-    }
+    // const prev=()=>{
+    //   i=(i-1+imgLength)%imgLength;
+    //   document.getElementById('image').src=`img/${images[i]}`;      
+    // }
+    // const next=()=>{
+    //   i=(i+1+imgLength)%imgLength;
+    //   document.getElementById('image').src=`img/${images[i]}`;  
+    // }
+
+
+    // document.getElementById('btn1').addEventListener('click',()=>{
+    //   i=(i-1+imgLength)%imgLength;
+    //   document.getElementById('image').src=`img/${images[i]}`;
+    // });
+    // document.getElementById('btn2').addEventListener('click',()=>{
+    //   i=(i+1+imgLength)%imgLength;
+    //   document.getElementById('image').src=`img/${images[i]}`;
+    // });
+
+
+    ////function setInterval(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number
+    setInterval(()=>{
+      i=i%imgLength;
+      document.getElementById('image').src=`img/${images[i]}`;
+      i++;
+    },1000
+  )
   </script>
 </body>
 </html>
