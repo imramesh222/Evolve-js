@@ -66,7 +66,7 @@
 <body>
 
   <div class="container">
-    <img src="img/b1.jpg" alt="" id="image">
+    <img src="img/b1.jpg" alt="" id="image" onmouseover="stop()" onmouseout="start()" >
     <div class="btn">
       <button id="btn1" onclick="prev()">&lt</button>
       <button id="btn2" onclick="next()">&gt</button>
@@ -100,12 +100,18 @@
 
 
     ////function setInterval(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number
-    setInterval(()=>{
+    let setTime=setInterval(()=>{
       i=i%imgLength;
       document.getElementById('image').src=`img/${images[i]}`;
       i++;
     },1000
   )
+  const start=()=>{
+    
+  }
+  const stop=()=>{
+    clearInterval(setTime);
+  }
   </script>
 </body>
 </html>

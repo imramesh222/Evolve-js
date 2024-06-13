@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+  <script>
+  //   let arr=['apple','orange','mango','seagreen','grapes']
+  //   document.write(arr.sort()+'<br>');
+  //   document.write(arr.reverse()+'<br>')
+
+
+  //   let num=[10,40,50,100,44,66,70];
+  //   document.write(num.sort()+'<br>');
+  //   document.write(num.reverse()+'<br>')
+
+
+
+  //   num.sort((a,b)=>a-b)
+  //   document.write(num+'<br>');
+
+  //   //map
+  //   // const squareFunction=(numrr)=>{
+  //   //   return numrr*2
+  //   // }
+  //  let result= num.map(numrr=>numrr*2)
+  //  document.write(`The squared number are : ${result}`);
+
+  //  filter
+  let numbers=[10,40,50,100,44,66,70]
+  let res=numbers.filter(number=>number>50)
+  document.write(res.sort((a,b)=>a-b)+'<br>')
+
+  //reduce
+  const totalSum=()=>{
+
+  }
+  let numberss=[10,40,50,100,44,66,70]
+  let results=numberss.reduceRight((accmulator,currentValue)=>{
+    console.log(accmulator)
+    console.log(currentValue)
+    return accmulator+currentValue;
+  },0)
+  document.write(results+'<br>')
+
+
+  </script>
+  
+</body>
+</html>
