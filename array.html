@@ -8,6 +8,31 @@
 <body>
   <script>
     let array=['Ram','Shyam','Hari','Krishna','guru'];
+
+    let numarray = [5,16,7,8,923,23]
+    console.log(numarray);
+
+    for (let i =0; i < numarray.length; i++){
+
+      for(let j = i+1; j < numarray.length; j++){
+
+        if (numarray[i]>= numarray[j]){
+
+          temp = numarray[i]
+          numarray[i] = numarray[j]
+          numarray[j]= temp
+
+        }     
+
+
+      }
+
+    }
+document.write(numarray);
+
+      
+
+    
     document.write(array+'<br>')
     // document.write(`${array[1]}<br>`)
     // array.push('Lina');

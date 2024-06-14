@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBJECTS</title>
+</head>
+<body>
+  <button id="btn" onclick="remove()">Remove</button>
+  <!-- <script>
+    const data={
+      //key:'value'
+      Name : "Rahul",
+      Age : 30,
+      Address:"Kathmandu,Nepal",
+      Subjects:['HTML','CSS','JS']
+    }
+    console.log(data)
+    let json=JSON.stringify(data)
+    document.write(json+'<br>')
+
+    ////Local storage
+    localStorage.setItem('StudentData',json)
+
+    document.write(localStorage.getItem('StudentData'))
+    document.write(localStorage.getItem('StudentData'))
+    //Session storage
+    let y='ramesh'
+    sessionStorage.setItem('stData',y)
+    document.write(sessionStorage.getItem('stData'))
+
+
+    const remove=()=>{
+      localStorage.removeItem('StudentData')
+      localStorage.clear() //this remove all item in storage
+    }
+
+    
+
+  </script> -->
+
+  <script>
+    const objectData={
+      Subject:['html','css','js']
+    }
+
+    let obj_to_str=JSON.stringify(objectData)
+
+
+    localStorage.setItem("data",obj_to_str)
+    let str_to_obj=JSON.parse(obj_to_str)
+    localStorage.setItem('latestdata',str_to_obj)
+  </script>
+</body>
+</html>
