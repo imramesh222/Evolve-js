@@ -11,9 +11,9 @@
   </button>
   <div id="date"></div>
   <script>
-    // // let show=() => {
-    // //   document.getElementById('date').innerHTML='date';
-    // // let myDate=new Date();
+    // let show=() => {
+    //   document.getElementById('date').innerHTML='date';
+    // let myDate=new Date();
     // // document.write(myDate)+'<br>'
     // let show = () => {
     //         let myDate = new Date();
@@ -31,19 +31,25 @@
     // }else{
     //   document.write('Zero')
     // }
-
-    let a=Number(prompt('Enter first number'));
-    let b=Number(prompt('Enter second number'));
-    let c=Number(prompt('Enter third number'));
-    if(a>b && a>c){
-      document.write(`${a} is greater`)
-    }else if(b>c && b>a){
-      document.write(`${b} is greater`)
-    }else if(c>b && c<a){
-      document.write(`${c} is greater`)
-    }else{
-      document.write(`${a} , ${b} ,${c} are equal`)
+   
+    let show=()=>{
+      let mydate=new Date()
+      // document.getElementById('date').innerHTML=mydate
+      document.write(mydate.getMinutes())
     }
+
+    // let a=Number(prompt('Enter first number'));
+    // let b=Number(prompt('Enter second number'));
+    // let c=Number(prompt('Enter third number'));
+    // if(a>b && a>c){
+    //   document.write(`${a} is greater`)
+    // }else if(b>c && b>a){
+    //   document.write(`${b} is greater`)
+    // }else if(c>b && c<a){
+    //   document.write(`${c} is greater`)
+    // }else{
+    //   document.write(`${a} , ${b} ,${c} are equal`)
+    // }
     
   </script>
 </body>
