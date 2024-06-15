@@ -6,11 +6,13 @@
   <title>Date Method</title>
 </head>
 <body>
-  <button id="btn" onclick="show()">
+  <p id="demo">Ramesh</p>
+  <button id="btn" onclick="show()" ondragover="over()">
     Show date
   </button>
   <div id="date"></div>
   <script>
+    document.getElementById('demo').style.display='none'
     // let show=() => {
     //   document.getElementById('date').innerHTML='date';
     // let myDate=new Date();
@@ -36,6 +38,9 @@
       let mydate=new Date()
       // document.getElementById('date').innerHTML=mydate
       document.write(mydate.getMinutes())
+    }
+    let over=()=>{
+      style.color='red'
     }
 
     // let a=Number(prompt('Enter first number'));
