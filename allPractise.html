@@ -6,19 +6,73 @@
   <title>Document</title>
 </head>
 <body>
-  <button id="demo">Click me</button>
+  <!-- <button id="demo">Click me</button>
   <h1 id="h1"></h1>
+  <button onmouseover="alert('Hello')">Click me.</button>
+  <div 
+onmouseover
+="this.style.backgroundColor='red'">myDIV.</div> -->
 
 
   <script>
-    let myFunction=()=>{
-      document.getElementById('h1').innerHTML=`Ramesh<br><hr>`
-    }
-    document.getElementById('demo').addEventListener('click',myFunction)
-
-    // function myFunction(){
-    //   alert("Hello")
+    // let myFunction=()=>{
+    //   document.getElementById('h1').innerHTML=`Ramesh<br><hr>`
     // }
+    // document.getElementById('demo').addEventListener('click',myFunction)
+
+    // // function myFunction(){
+    // //   alert("Hello")
+    // // }
+
+  //   function myFunction() {
+  // return"Hello"
+  // }
+  // document.getElementById("h1").innerHTML = myFunction();
+  //   // let x=5
+  //   // let y=10
+  //   // let z=x+y
+  //   // alert(z)
+  //   // document.getElementById('h1').innerHTML=z
+
+//   const person = {
+//   firstName: "John",
+//   lastName: "Doe"
+// };
+
+// alert(
+// person.firstName
+// );
+// const person 
+// =
+//  {
+//   name: "John", age: 50
+// };
+// alert(`${person.name} is ${person.age}`);
+
+// let txt = "We are \"Vikings\"";
+// document.write(txt);
+// const message = "Hello,\nWorld!";
+// alert(message);
+// const person = {
+//   name: "John",
+//   age: 50
+// };
+
+// alert(`\"${person.name}\" is ${person.age}`);
+
+// let txt = "I can eat bananas all day";
+// let x = txt.splice(10,17,'Ramesh');
+// document.write(x)
+
+let txt = "I can eat bananas all day";
+let start = 10; // Start index of "bananas"
+let end = 22;   // End index of "all day" + 1
+
+// Concatenate parts of the string with the new substring
+let x = txt.slice(0, start) + 'Ramesh' + txt.slice(end);
+document.write(x); // Output: I can eat Ramesh
+
+
 
   </script>
   
