@@ -14,7 +14,7 @@ onmouseover
 ="this.style.backgroundColor='red'">myDIV.</div> -->
 
 
-  <script>
+  <!-- <script>
     // let myFunction=()=>{
     //   document.getElementById('h1').innerHTML=`Ramesh<br><hr>`
     // }
@@ -74,7 +74,15 @@ document.write(x); // Output: I can eat Ramesh
 
 
 
+  </script> -->
+  <script>
+    const Data = {
+        Name: 'Ramesh',
+        Image: 'img/p2.jpg',
+        Address:'Kathmandu'
+    };
+    let details=JSON.stringify(Data)
+    localStorage.setItem('data',details)
   </script>
-  
 </body>
 </html>
