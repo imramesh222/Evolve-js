@@ -4,38 +4,140 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      box-sizing: border-box;
+    }
+     body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+      background-color: #746a6a;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      
+    }
+
+    table {
+      border: 5px solid black;
+      
+
+    }
+
+    td {
+      padding: 10px;
+      text-align: center;
+      background-color: #746a6a;
+      
+    }
+    #image{
+      padding: 0;
+      border: 2px solid rgb(41, 160, 67);
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      z-index: 1000;
+    }
+    .popup img {
+      max-width: 100%;
+      max-height: 80vh;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+  </style>
 </head>
 <body>
   <div class="container">
     <table id="table">
-      <tr id="name"></tr>
-      <tr id="image"></tr>
-      <tr id="address"></tr>
+      <tr><td id="image"></td></tr>
+      <tr><td id="name"></td></tr>
+      <tr><td id="address"></td></tr>
     </table>
   </div>
+
+
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <img id="popupImage" src="" alt="">
+  </div>
   
-  
- <script>
+  <script>
     const Data = {
-        Name: 'Ramesh',
-        Image:"https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+        Name: 'Ramesh Rawat',
+        Image: "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
         Address: 'Kathmandu'
     };
 
-  
+    // Store the data in localStorage
     let details = JSON.stringify(Data);
     localStorage.setItem('data', details);
 
- 
+    // Retrieve the data from localStorage
     let retrievedData = localStorage.getItem('data');
     let parsedData = JSON.parse(retrievedData);
+    // document.write(parsedData)
+    // console.log(parsedData)
 
-    
-    document.getElementById('name').innerHTML = parsedData.Name;
-    document.getElementById('image').innerHTML = parsedData.Image;
-    document.getElementById('address').innerHTML = parsedData.Address;
-</script>
+    // Set the innerHTML of the table cells
+    document.getElementById('name').innerText =`Name : ${parsedData.Name}`;
 
+    // Create an image element and set its source
+    let imgElement = document.createElement('img');
+    imgElement.src = parsedData.Image;
+    imgElement.alt = 'Image of ' + parsedData.Name;
+    imgElement.width = 300; // Set a width for the image if desired
+
+    // Append the image element to the appropriate table cell
+    document.getElementById('image').appendChild(imgElement);
+
+    // Set the address
+    document.getElementById('address').innerText = `Address : ${parsedData.Address}`;
+
+        // Handle mouseover event to show the popup
+        imgElement.addEventListener('mouseover', function() {
+      document.getElementById('popupImage').src = parsedData.Image;
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('popup').style.display = 'block';
+    });
+
+    // Handle mouseout event to hide the popup
+    imgElement.addEventListener('mouseout', function() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('popup').style.display = 'none';
+    });
+
+    // Handle overlay click to hide the popup
+    document.getElementById('overlay').addEventListener('click', function() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('popup').style.display = 'none';
+    });
+  </script>
   
 </body>
 </html>
