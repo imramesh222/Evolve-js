@@ -13,8 +13,27 @@
       Address:'Simikot,Himla',
       Intrests:['Python','JS','CSS']
     }
-    document.write(values)
-    console.log(values)
+    let stringValues=JSON.stringify(values)
+    document.write(stringValues+'<br>')
+    console.log(stringValues)
+
+    //Local storage
+    localStorage.setItem('MyData',stringValues)
+    console.log(localStorage.getItem('MyData'))
+    document.write(localStorage.getItem('MyData')+'<br>')
+
+    //Session storage
+    const sesData={
+      string:'Ramesh',
+      number:1234,
+      Boolean:true
+    }
+    let jsonData=JSON.stringify(sesData)
+    document.write(jsonData)
+
+    sessionStorage.setItem('allData',jsonData)
+    document.write(sessionStorage.getItem('allData'))
+
   </script>
 </body>
 </html>
