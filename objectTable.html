@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      background-color: rgb(118, 131, 131);
+      text-align: center;
+      align-items: center; /*center vertically */
+      height: 100vh;
+    }
+    .container{
+      /* padding: 10px; */
+      background-color: rgb(216, 209, 209);
+      border-radius: 10px;
+      border: 5px solid black;
+
+    }
+   
+    #image{
+      border: 2px solid black;
+    }
+    #name{
+      background-color: rgb(122, 153, 51);
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+    }
+    #address{
+      background-color: rgb(192, 147, 24);
+      font-size: 20px;
+      border-radius: 50%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table id="table">
+      <tr><td id="image" onmouseover="pop()" onmouseout="out()"></td></tr> 
+      <tr><td id="name"></td></tr>
+      <tr><td id="address"></td></tr>
+    </table>
+  </div>
+
+  <script>
+    const Data={
+      Name:'Ramesh Rawat',
+      Image:'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg',
+      Address:'Kathmandu'
+    }
+// Store the data in localStorage
+    let details=JSON.stringify(Data)
+ 
+
+    localStorage.setItem('data',details)
+
+     // Retrieve the data from localStorage
+    let retrievedData = localStorage.getItem('data');
+    let parsedData = JSON.parse(retrievedData);
+
+     // Set the innerHTML of the table cells
+     document.getElementById('name').innerHTML=`Name : ${parsedData.Name}`
+     document.getElementById('address').innerHTML=`Address : ${parsedData.Address}`
+
+      
+        // Create an image element and set its source
+       let imgElement=document.createElement('img');
+       imgElement.src=parsedData.Image;
+       imgElement.alt=`image of ${parsedData.Name}`;
+       imgElement.width=300;
+       imgElement.height=200
+
+     // Append the image element to the appropriate table cell
+     document.getElementById('image').appendChild(imgElement)
+
+
+     const pop=()=>{
+      imgElement.style.transform = 'scale(1.5)';
+      imgElement.style.border = '4px solid black';
+      // imgElement.style.margin='0px 0px 60px 0px'
+     }
+     const out=()=>{
+      imgElement.style.transform = 'scale(1)';
+     }
+  </script>
+  
+</body>
+</html>
