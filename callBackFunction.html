@@ -8,7 +8,7 @@
 
 <p id="demo"></p>
 
-<script>
+<!-- <script>
 
 function myFunction(some){
   document.getElementById('demo').innerHTML=some;
@@ -17,10 +17,23 @@ function myCalculator(num1,num2){
   let x=num1;
   let y=num2;
   let c=x+y;
-  return c;
+  myFunction(c)
+  // return c;
 }
-let result=myCalculator(4,5)
-myFunction(result)
+myCalculator(4,5)
+// let result=myCalculator(4,5)
+// myFunction(result)
+</script> -->
+
+<script>
+function myFunction(some){
+  document.getElementById('demo').innerHTML=some;
+}
+function myCalculator(num1,num2,myCallback){
+  let sum=num1+num2;
+  myCallback(sum);
+}
+myCalculator(1,2,myFunction)
 </script>
 
 </body>
