@@ -11,12 +11,11 @@
         const news = [
             {newsTitle:'First Title',newsContent:'This is my First News.'},
             {newsTitle:'Second Title',newsContent:'This is my Second News.'},
-
         ]
 
-        const demofunction=()=>{
+        const demofunction = () => {
             let result = ''
-            news.forEach((post)=>{
+            news.forEach((post) => {
                 result += `<li>${post.newsTitle}
                             <ul><li>${post.newsContent}</li></ul>
                     </li>`
@@ -24,35 +23,30 @@
             document.write(result)
         }
 
-        const showNews=()=>{
-            setTimeout(demofunction,2000)
+        const showNews = () => {
+            setTimeout(demofunction, 2000)
         }
 
-        const addNews=(newsData)=>{
-          return new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-              news.push(newsData)
-              let error=true;
-              if (!error){
-                resolve()
-              }else{
-                reject('Error : Unable to add news')
-              }
-            },3000)
-          })
+        const addNews = (newsData) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    news.push(newsData)
+                    let error = false;
+                    if (!error) {
+                        resolve()
+                    } else {
+                        reject('Error: Unable to add news')
+                    }
+                }, 3000)
+            })
         }
-        
 
-
-       
-
-
-      
-        addNews({newsTitle:'third news',newsContent:'this is my third content'})
-        .then(showNews)
-        .catch((err)=>document.write(err))
+        addNews({newsTitle: 'Third News', newsContent: 'This is my third content'})
+            .then(() => addNews({newsTitle: 'Fourth News', newsContent: 'This is my fourth content'}))
+            .then(() => addNews({newsTitle: 'Fifth News', newsContent: 'This is my fifth content'}))
+            .then(showNews)
+            .catch((err) => document.write(err))
     </script>
 
-    
 </body>
 </html>
