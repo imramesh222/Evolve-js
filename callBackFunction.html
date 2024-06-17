@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Functions</h1>
+<h2>Function Sequence</h2>
+<p>JavaScript functions are executed in the sequence they are called.</p>
+
+<p id="demo"></p>
+
+<script>
+
+function myFunction(some){
+  document.getElementById('demo').innerHTML=some;
+}
+function myCalculator(num1,num2){
+  let x=num1;
+  let y=num2;
+  let c=x+y;
+  return c;
+}
+let result=myCalculator(4,5)
+myFunction(result)
+</script>
+
+</body>
+</html>
