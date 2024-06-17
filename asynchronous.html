@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>JavaScript Functions</h1>
+<!-- <h1>JavaScript Functions</h1>
 <h2>setTimeout() with a Callback</h2>
 
 <p id="p">Wait 3 seconds (3000 milliseconds) for this page to change.</p>
@@ -16,7 +16,50 @@ function myFunction() {
 	document.getElementById("p").innerHTML = '';
   document.getElementById("demo").innerHTML = "I love You !!";
 }
-</script>
+</script> -->
+
+<script>
+  const news = [
+      {newsTitle:'First Title',newsContent:'This is my First News.'},
+      {newsTitle:'Second Title',newsContent:'This is my Second News.'},
+
+  ]
+
+  const demofunction=()=>{
+      let result = ''
+      news.forEach((post)=>{
+          result += `<li>${post.newsTitle}
+                      <ul><li>${post.newsContent}</li></ul>
+              </li>`
+      })
+      document.write(result)
+  }
+
+  const showNews=()=>{
+      setTimeout(demofunction,2000)
+  }
+
+  const addNews=(newsData)=>{
+    return new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+        news.push(newsData)
+        let error=true;
+        if (error){
+          resolve()
+        }else{
+          reject('Error : Unable to add news')
+        }
+      },3000)
+    })
+  }
+
+  const myFunction=async()=>{
+    await addNews({newsTitle:'third news',newsContent:'this is my third content'})
+    showNews()
+
+  }
+  myFunction()
+  </script>
 
 </body>
 </html>
