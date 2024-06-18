@@ -33,7 +33,7 @@
 
           <div class="mb-3">
             <label for="pwd">Password</label>
-            <input type="password" name="pwd" id="pwd" class="form-control" onkeyup="pwdvaldate()">
+            <input type="password" name="pwd" id="pwd" class="form-control" onkeyup="pwdvalidate()">
             <span id="pwdMsg"></span>
           </div>
           <div class="mb-3">
@@ -66,12 +66,12 @@
       }
       //check name pattern
       else if(!fname.match(/^[/a-zA-Z/]+$/)){
-        displayMsg("Invalid First Name","fnameMsg",'orange');
+        displayMsg("Invalid First Name","fnameMsg",'red');
         return false;
       }
       //check length not less than 3
       else if(fname.length<3){
-        displayMsg("Name must be more than 3 letters","fnameMsg","blue")
+        displayMsg("Name must be more than 3 letters","fnameMsg","red")
         return false;
       }
       else{
@@ -107,14 +107,46 @@
     if (email == "") {
         displayMsg("Email is compulsory", 'emailMsg', 'red');
         return false;
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-    } else if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/)) {
+        
+    } else if (!email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
         displayMsg('Invalid email', 'emailMsg', 'red');
         return false;
     } else {
         displayMsg("Valid Email", 'emailMsg', 'green');
         return true;
     }
+}
+
+//validation for password
+const pwdvalidate = () => {
+  let pwd = document.getElementById('pwd').value;
+  if (pwd == "") {
+    displayMsg("Password is compulsory", "pwdMsg", "red");
+    return false;
+  } else if (pwd.length < 8) {
+    displayMsg("Password must be at least 8 characters", "pwdMsg", "red");
+    return false;
+  } else if (!pwd.match(/^[a-zA-Z0-9._%+-]+$/)) {
+    displayMsg("Invalid Password", "pwdMsg", "red");
+    return false;
+  } else {
+    displayMsg("Valid Password", "pwdMsg", "green");
+    return true;
+  }
+}
+
+
+const cpwdvalidate=()=>{
+  let pwd=document.getElementById('pwd').value;
+  let cpwd=document.getElementById('cpwd').value;
+  if(cpwd != pwd){
+    displayMsg("Password must be same","cpwdMsg","red")
+    return false
+  }
+  else{
+    displayMsg("Valid Password","cpwdMsg","green")
+    return false
+  }
 }
 
   </script>
