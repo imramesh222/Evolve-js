@@ -139,12 +139,16 @@ const pwdvalidate = () => {
 const cpwdvalidate=()=>{
   let pwd=document.getElementById('pwd').value;
   let cpwd=document.getElementById('cpwd').value;
-  if(cpwd != pwd){
+  if (pwd == "") {
+    displayMsg("Password is compulsory", "pwdMsg", "red");
+    return false;
+  }
+  else if (cpwd != pwd){
     displayMsg("Password must be same","cpwdMsg","red")
     return false
   }
   else{
-    displayMsg("Valid Password","cpwdMsg","green")
+    displayMsg("Password matched","cpwdMsg","green")
     return false
   }
 }
