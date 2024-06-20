@@ -41,6 +41,9 @@
             <input type="password" name="cpwd" id="cpwd" class="form-control" onkeyup="cpwdvalidate()">
             <span id="cpwdMsg"></span>
           </div>
+          <div class="mb-3">
+            <input type="submit"  id="submit" value="Submit">
+          </div>
         </form>
       </div>
     </div>
@@ -126,7 +129,7 @@ const pwdvalidate = () => {
   } else if (pwd.length < 8) {
     displayMsg("Password must be at least 8 characters", "pwdMsg", "red");
     return false;
-  } else if (!pwd.match(/^[a-zA-Z0-9._%+-]+$/)) {
+  } else if (!pwd.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$*!?]).{8,}$/)) {
     displayMsg("Invalid Password", "pwdMsg", "red");
     return false;
   } else {
@@ -149,6 +152,15 @@ const cpwdvalidate=()=>{
   }
   else{
     displayMsg("Password matched","cpwdMsg","green")
+    return true
+  }
+}
+
+const onsubmit=()=>{
+  if(fnamevalidate()&&lnamevalidate()&&emailvalidate()&&pwdvalidate()&&cpwdvalidate()){
+    return true
+  }
+  else{
     return false
   }
 }
