@@ -44,7 +44,7 @@ function myFunction() {
       setTimeout(()=>{
         news.push(newsData)
         let error=true;
-        if (error){
+        if (!error){
           resolve()
         }else{
           reject('Error : Unable to add news')
