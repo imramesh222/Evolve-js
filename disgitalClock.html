@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wall Clock with Needles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+    .clock {
+      width: 300px;
+      height: 300px;
+      border: 10px solid #000;
+      border-radius: 50%;
+      position: relative;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+    }
+    .hour {
+      height: 8px;
+      width: 35%;
+    }
+    .minute {
+      height: 6px;
+      width: 45%;
+    }
+    .second {
+      height: 4px;
+      width: 50%;
+      background: red;
+    }
+    .center {
+      width: 20px;
+      height: 20px;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="hand hour" id="hour-hand"></div>
+    <div class="hand minute" id="minute-hand"></div>
+    <div class="hand second" id="second-hand"></div>
+    <div class="center"></div>
+  </div>
+  <script>
+    const setRotation = (element, rotationPercentage) => {
+      element.style.transform = `rotate(${rotationPercentage * 360}deg)`;
+    };
+
+    const setClock = () => {
+      const currentDate = new Date();
+      const secondsRatio = currentDate.getSeconds() / 60;
+      const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
+      const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
+      
+      setRotation(document.getElementById('second-hand'), secondsRatio);
+      setRotation(document.getElementById('minute-hand'), minutesRatio);
+      setRotation(document.getElementById('hour-hand'), hoursRatio);
+    };
+
+    setInterval(setClock, 1000);
+    setClock();
+  </script>
+</body>
+</html>
