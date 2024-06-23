@@ -6,7 +6,7 @@
   <title>Wall Clock with Needles</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      
       display: flex;
       justify-content: center;
       align-items: center;
@@ -29,21 +29,24 @@
       background: #000;
       position: absolute;
       top: 50%;
-      transform-origin: 100%;
+      left: 50%;
+      transform-origin: 0% 50%;
       transform: rotate(90deg);
       transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
     }
     .hour {
-      height: 8px;
       width: 35%;
+      height: 8px;
+      background: #000;
     }
     .minute {
-      height: 6px;
       width: 45%;
+      height: 6px;
+      background: #000;
     }
     .second {
-      height: 4px;
       width: 50%;
+      height: 4px;
       background: red;
     }
     .center {
