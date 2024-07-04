@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const news=[
+      {newsTitle:'first news',newsContent:'this is first news content'},
+      {newsTitle:'second news',newsContent:'this is second news content'},
+    ]
+
+    const addNews=(newItem)=>{
+      setTimeout((resolve,reject)=>{
+        news.push(newItem)
+        resolve()
+      },1000)
+    }
+
+    const demoFunction()
+    const showNews = () => {
+  const newNewsItem = { newsTitle: 'Third title', newsContent: 'This is my third news' };
+  
+  addNews(newNewsItem).then(() => {
+    setTimeout(demoFunction, 2000); // Wait for 2 seconds before displaying the news
+  });
+};
+showNews()
+  </script>
+</body>
+</html>
